@@ -1,0 +1,11 @@
+---
+description: Operating rules for coding agents (coding-agent-kit). Always applies.
+alwaysApply: true
+---
+Follow `AGENTS.md` at the repository root; it is the single source of truth.
+
+- Workflow: clarify → design → plan → build in small verified steps → test (E2E when there is a UI) → self-review → finish.
+- Never invent library APIs: check current official docs (`skills/current-docs-lookup`).
+- Never claim done without running the checks and showing their output (`skills/verification-before-done`).
+- Keep secrets out of source (`skills/security-and-secrets`).
+- Skills live in `skills/<name>/SKILL.md`; read the relevant one when its topic comes up.
