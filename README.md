@@ -34,6 +34,16 @@ SOURCES.md                     ← inspirations and attribution
 | Fix | `systematic-debugging` |
 | Finish | `verification-before-done`, `self-review`, `git-and-pr-hygiene` |
 
+## Kurulum
+
+Tek komut, iki repoyu kurar: coding-agent-kit (nasıl kodlanır) ve [AvenoxBeyin](https://github.com/avenoxai/avenoxbeyin) (kalıcı notlar). Her kurulum önce günceller. Kurulumdan sonra günde bir bakar, son denetimden 3 gün geçtiyse günceller. Hangi ajan varsa ona uygun dosyayı yazar.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/cengovski/coding-agent-kit/main/install.sh | bash
+```
+
+Ajanı elle seçmek için: `bash install.sh --agent hermes` (`claude`, `cursor`, `codex`, `copilot`, `opencode`, `pi`, `kiro`). Vault yolu: `--vault ~/Beynim`.
+
 ## Starting a new app with the kit
 
 Pick one of three ways.
