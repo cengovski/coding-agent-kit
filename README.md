@@ -42,7 +42,23 @@ Tek komut, iki repoyu kurar: coding-agent-kit (nasıl kodlanır) ve [AvenoxBeyin
 curl -fsSL https://raw.githubusercontent.com/cengovski/coding-agent-kit/main/install.sh | bash
 ```
 
-Ajanı elle seçmek için: `bash install.sh --agent hermes` (`claude`, `cursor`, `codex`, `copilot`, `opencode`, `pi`, `kiro`). Vault yolu: `--vault ~/Beynim`.
+Seçenek vermek için: `curl -fsSL https://raw.githubusercontent.com/cengovski/coding-agent-kit/main/install.sh | bash -s -- --agent cursor --vault ~/Beynim`. Bu repo klonluysa: `bash install.sh --agent hermes`.
+
+| Seçenek | Ne yapar |
+|---|---|
+| `--agent` | Ajanı elle seçer: `hermes`, `claude`, `cursor`, `codex`, `copilot`, `opencode`, `pi`, `kiro` (varsayılan: makinede bulunan) |
+| `--vault DIR` | AvenoxBeyin vault yolu (varsayılan: `~/Beynim`) |
+| `--target DIR` | Proje dosyalarını da yazar (`CLAUDE.md`, `.cursor/rules`, `AGENTS.md`, `.github/copilot-instructions.md`) |
+| `--skip-beyin` / `--no-cron` / `--dry-run` | Beyin'i atla / zamanlayıcı kurma / sadece ne yapılacağını göster |
+
+Gerekenler: `git` ve `python3` (AvenoxBeyin için 3.11+). Nereye ne kurulur:
+
+- Kit: `~/.local/share/avenox-kit/coding-agent-kit` (değiştirmek için `CODING_AGENT_KIT_DIR`).
+- AvenoxBeyin: en son kararlı GitHub sürümü indirilir, SHA-256 doğrulanır ve kendi kurucusuyla vault'a kurulur; vault zaten V3 ise `beyin.py update` ile güncellenir. Notlar silinmez. Obsidian isteğe bağlı.
+- Ajan dosyaları: kullanıcı düzeyinde (`~/.claude/skills`, `~/.codex/AGENTS.md`, `~/.cursor/rules`, `~/.hermes/skills` …).
+- Zamanlayıcı: `crontab` içinde `# avenox-kit-3day` satırı; günlük 09:00, log `~/.local/share/avenox-kit/update.log`. Kaldırmak için `crontab -e` ile o satırı sil.
+
+*English:* the one-liner clones the kit to `~/.local/share/avenox-kit/coding-agent-kit`, links the skills into the agents it finds, installs the latest verified AvenoxBeyin release into `~/Beynim`, and adds a daily cron entry that updates every 3 days. Pass flags with `bash -s -- --agent cursor`. Project-local files are written only with `--target`.
 
 ## Starting a new app with the kit
 

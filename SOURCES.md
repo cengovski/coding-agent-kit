@@ -16,4 +16,10 @@
 | [DeepLearning.AI — Claude Code: A Highly Agentic Coding Assistant](https://www.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant) | Publicly described agentic-coding practices only (planning, context, testing loops). No course content is included. | Course (not reproduced) |
 | [CS50's Introduction to Programming with Python](https://cs50.harvard.edu/python/) | General programming hygiene common to introductory Python teaching (functions, testing, exceptions, readable code). No course text or problem sets are included. | Course (not reproduced) |
 
+## Installed alongside the kit
+
+| Project | How it is used | License |
+|---|---|---|
+| [avenoxai/avenoxbeyin](https://github.com/avenoxai/avenoxbeyin) (AvenoxBeyin / İkinci Beyin) | `install.sh` downloads its latest stable release at install time, verifies the SHA-256, and runs its own installer/updater into your vault. Nothing from it is vendored in this repository. | MIT |
+
 Trademarks and product names belong to their owners. Mention here does not imply endorsement.
